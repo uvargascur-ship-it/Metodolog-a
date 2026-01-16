@@ -1,0 +1,81 @@
+\documentclass[12pt, a4paper]{article}
+
+% --- PAQUETES DE IDIOMA ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish, es-tabla, es-nodecimaldot]{babel}
+
+% --- FORMATO APA (MANUAL) ---
+% 1. Márgenes: 2.54 cm (1 pulgada) en todos los lados
+\usepackage[margin=2.54cm]{geometry}
+
+% 2. Fuente: Times New Roman (Texto y Matemáticas)
+\usepackage{mathptmx}
+
+% 3. Espaciado: Doble espacio en todo el documento
+\usepackage{setspace}
+\doublespacing
+
+% 4. Sangría: 1.27 cm en primera línea de párrafo
+\setlength{\parindent}{1.27cm}
+
+% --- PAQUETES PARA ECONOMÍA ---
+\usepackage{amsmath, amsfonts, amssymb} % Ecuaciones
+\usepackage{graphicx}                   % Imágenes
+\usepackage{booktabs}                   % Tablas estéticas
+\usepackage{float}                      % Para usar [H] en figuras
+\usepackage{csquotes}                   % Comillas correctas
+
+% --- BIBLIOGRAFÍA APA ---
+% Usamos 'apacite' que es el estándar para BibTeX
+\usepackage[natbibapa]{apacite}
+\bibliographystyle{apacite}
+
+% --- HIPERVÍNCULOS ---
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black, % APA pide negro
+    citecolor=black, % APA pide negro
+    urlcolor=blue    % URLs azules para facilitar lectura digital
+}
+
+% ==========================================
+%           INICIO DEL DOCUMENTO
+% ==========================================
+\begin{document}
+
+% 1. Insertar Carátula (sin numeración de página)
+\newgeometry{margin=3cm} % Ajuste opcional: márgenes un poco más grandes para la portada estética
+\include{Caratula}
+\restoregeometry % Vuelve a márgenes APA (2.54cm)
+
+% 2. Cuerpo del Trabajo
+\setcounter{page}{1} % Empezamos a contar páginas aquí
+
+\section{Introducción}
+Este documento está configurado para seguir las normas APA manteniendo la flexibilidad de LaTeX. La fuente es Times New Roman de 12 puntos y el interlineado es doble.
+
+Para citar tus fuentes de economía, usas el comando estándar. Por ejemplo, \cite{Enders2014} señala que las series de tiempo son fundamentales. También puedes citar al final de la frase \citep{Wooldridge2012}.
+
+\section{Metodología}
+En esta sección presentamos el modelo econométrico. Observa que las ecuaciones se numeran automáticamente:
+
+\begin{equation}
+    Y_t = \beta_0 + \beta_1 X_{1t} + \beta_2 X_{2t} + \mu_t
+\end{equation}
+
+Donde $Y_t$ representa la variable dependiente en el tiempo $t$.
+
+\section{Resultados Preliminares}
+Aquí puedes insertar tus tablas o gráficos exportados de R o Stata.
+
+\section{Conclusiones}
+Tus conclusiones finales sobre la investigación de verano.
+
+% 3. Bibliografía
+\newpage
+% 3. Bibliografía
+\bibliography{referencias}
+
+\end{document}
