@@ -1,81 +1,299 @@
+% =========================================================================
+%      MANUAL Y PLANTILLA DE LATEX PARA NORMAS APA 7ma EDICIÓN
+%                   Adaptado para la UNMSM
+% =========================================================================
+
 \documentclass[12pt, a4paper]{article}
 
-% --- PAQUETES DE IDIOMA ---
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+% -------------------------------------------------------------------------
+% 1. CODIFICACIÓN E IDIOMA
+% -------------------------------------------------------------------------
+\usepackage[utf8]{inputenc} % Permite tildes y ñ directamente
+\usepackage[T1]{fontenc}    % Correcta codificación de salida
 \usepackage[spanish, es-tabla, es-nodecimaldot]{babel}
+% es-tabla: Cambia la etiqueta "Cuadro" por "Tabla" (Norma APA).
+% es-nodecimaldot: Usa punto (.) para decimales (10.5) en vez de coma (10,5).
 
-% --- FORMATO APA (MANUAL) ---
-% 1. Márgenes: 2.54 cm (1 pulgada) en todos los lados
+% -------------------------------------------------------------------------
+% 2. FORMATO DE PÁGINA Y TEXTO (APA BÁSICO)
+% -------------------------------------------------------------------------
+% Márgenes: 1 pulgada (2.54 cm) en todos los lados.
 \usepackage[margin=2.54cm]{geometry}
 
-% 2. Fuente: Times New Roman (Texto y Matemáticas)
+% Fuente: Times New Roman (Texto y Matemáticas).
 \usepackage{mathptmx}
 
-% 3. Espaciado: Doble espacio en todo el documento
+% Espaciado: Doble espacio estricto en todo el documento.
 \usepackage{setspace}
 \doublespacing
 
-% 4. Sangría: 1.27 cm en primera línea de párrafo
+% Sangría: 1.27 cm (1/2 pulgada) en la primera línea de cada párrafo.
 \setlength{\parindent}{1.27cm}
 
-% --- PAQUETES PARA ECONOMÍA ---
-\usepackage{amsmath, amsfonts, amssymb} % Ecuaciones
-\usepackage{graphicx}                   % Imágenes
-\usepackage{booktabs}                   % Tablas estéticas
-\usepackage{float}                      % Para usar [H] en figuras
-\usepackage{csquotes}                   % Comillas correctas
+% -------------------------------------------------------------------------
+% 3. ENCABEZADO Y NUMERACIÓN DE PÁGINA
+% -------------------------------------------------------------------------
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt} % Ajuste técnico para evitar errores
+\pagestyle{fancy}
+\fancyhf{} % Limpia encabezados y pies por defecto
 
-% --- BIBLIOGRAFÍA APA ---
-% Usamos 'apacite' que es el estándar para BibTeX
-\usepackage[natbibapa]{apacite}
-\bibliographystyle{apacite}
+% LADO IZQUIERDO: Título Corto (Running Head)
+% Nota: Debe ser en MAYÚSCULAS y máximo 50 caracteres.
+\fancyhead[L]{DETERMINANTES DE LA VICTIMIZACIÓN EN HUAYCÁN}
 
-% --- HIPERVÍNCULOS ---
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=black, % APA pide negro
-    citecolor=black, % APA pide negro
-    urlcolor=blue    % URLs azules para facilitar lectura digital
+% LADO DERECHO: Número de página
+\fancyhead[R]{\thepage}
+
+% Elimina la línea horizontal del encabezado (APA no usa líneas decorativas)
+\renewcommand{\headrulewidth}{0pt}
+
+% -------------------------------------------------------------------------
+% 4. JERARQUÍA DE TÍTULOS (APA 7 - 5 NIVELES)
+% -------------------------------------------------------------------------
+\usepackage{titlesec}
+
+% Nivel 1: Centrado, Negrita (Ej. \section{Introducción})
+\titleformat{\section}[block]{\centering\normalfont\normalsize\bfseries}{}{0em}{}
+
+% Nivel 2: Izquierda, Negrita (Ej. \subsection{Subtema})
+\titleformat{\subsection}[block]{\raggedright\normalfont\normalsize\bfseries}{}{0em}{}
+
+% Nivel 3: Izquierda, Negrita, Cursiva (Ej. \subsubsection{Detalle})
+\titleformat{\subsubsection}[block]{\raggedright\normalfont\normalsize\bfseries\itshape}{}{0em}{}
+
+% Nivel 4: Sangría, Negrita, Punto final. Texto sigue en la línea.
+\titleformat{\paragraph}[runin]{\normalfont\normalsize\bfseries}{}{0em}{}[.]
+\titlespacing{\paragraph}{1.27cm}{0pt}{1em}
+
+% Nivel 5: Sangría, Negrita, Cursiva, Punto final. Texto sigue en la línea.
+\titleformat{\subparagraph}[runin]{\normalfont\normalsize\bfseries\itshape}{}{0em}{}[.]
+\titlespacing{\subparagraph}{1.27cm}{0pt}{1em}
+
+% -------------------------------------------------------------------------
+% 5. CONFIGURACIÓN DE TABLAS Y FIGURAS (ESTILO APA)
+% -------------------------------------------------------------------------
+\usepackage{booktabs} % Líneas horizontales profesionales (\toprule, \midrule)
+\usepackage{caption}  % Control total de los títulos
+
+% Configuración común para que diga "Tabla X" en negrita y Título en Cursiva abajo
+\DeclareCaptionLabelSeparator*{newline}{\\} % Define el salto de línea
+
+% -- TABLAS --
+\captionsetup[table]{
+    name=Tabla,
+    labelsep=newline,          % Salto de línea entre número y título
+    justification=raggedright, % Alineado a la izquierda
+    singlelinecheck=false,     % Forza alineación izquierda
+    labelfont=bf,              % "Tabla X" en Negrita
+    textfont=it,               % "Título" en Cursiva
+    skip=0.5em                 % Espacio antes de la tabla
 }
 
-% ==========================================
-%           INICIO DEL DOCUMENTO
-% ==========================================
+% -- FIGURAS --
+\captionsetup[figure]{
+    name=Figura,
+    labelsep=newline,
+    justification=raggedright,
+    singlelinecheck=false,
+    labelfont=bf,
+    textfont=it,
+    skip=0.5em
+}
+
+% -------------------------------------------------------------------------
+% 6. CONFIGURACIÓN DE ÍNDICES (TOC, LOT, LOF)
+% -------------------------------------------------------------------------
+\usepackage{tocloft}
+
+% Elimina la numeración automática (1, 1.1) del índice y del texto
+\setcounter{secnumdepth}{0}
+
+% -- A) TABLA DE CONTENIDO --
+\renewcommand{\contentsname}{Tabla de contenido}
+\renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries} % Título centrado
+\renewcommand{\cftaftertoctitle}{\hfill}
+
+% -- B) ÍNDICE DE TABLAS --
+\renewcommand{\listtablename}{Índice de tablas}
+\renewcommand{\cftlottitlefont}{\hfill\Large\bfseries}
+\renewcommand{\cftafterlottitle}{\hfill}
+% Prefijo: Agrega la palabra "Tabla" antes del número en el índice
+\renewcommand{\cfttabpresnum}{Tabla }
+\renewcommand{\cfttabaftersnum}{.}
+\setlength{\cfttabnumwidth}{2.5cm} % Espacio reservado para "Tabla X."
+
+% -- C) ÍNDICE DE FIGURAS --
+\renewcommand{\listfigurename}{Índice de figuras}
+\renewcommand{\cftloftitlefont}{\hfill\Large\bfseries}
+\renewcommand{\cftafterloftitle}{\hfill}
+% Prefijo: Agrega la palabra "Figura" antes del número en el índice
+\renewcommand{\cftfigpresnum}{Figura }
+\renewcommand{\cftfigaftersnum}{.}
+\setlength{\cftfignumwidth}{2.5cm}
+
+% -- D) Ajustes Visuales --
+% Define sangrías escalonadas para el índice
+\setlength{\cftsecindent}{0cm}
+\setlength{\cftsubsecindent}{1.27cm}
+\setlength{\cftsubsubsecindent}{2.54cm}
+% Puntos suspensivos (...) guía hasta el número de página
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+% -------------------------------------------------------------------------
+% 7. OTROS PAQUETES ÚTILES
+% -------------------------------------------------------------------------
+\usepackage{pdflscape}                   % Páginas en horizontal (Landscape)
+\usepackage{amsmath,amsfonts,amssymb}    % Matemáticas avanzadas
+\usepackage{graphicx}                    % Inserción de imágenes
+\usepackage{float}                       % Para usar [H] (posición fija)
+\usepackage{csquotes}                    % Comillas inteligentes
+
+% Configuración de Hipervínculos (Negro para texto, Azul para URL)
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue}
+
+% -------------------------------------------------------------------------
+% 8. BIBLIOGRAFÍA
+% -------------------------------------------------------------------------
+\usepackage[natbibapa]{apacite} % Paquete oficial para citas APA
+\bibliographystyle{apacite}
+
+% =========================================================================
+%                          INICIO DEL DOCUMENTO
+% =========================================================================
 \begin{document}
 
-% 1. Insertar Carátula (sin numeración de página)
-\newgeometry{margin=3cm} % Ajuste opcional: márgenes un poco más grandes para la portada estética
-\include{Caratula}
-\restoregeometry % Vuelve a márgenes APA (2.54cm)
+% --- PASO 1: CARÁTULA (Sin número de página) ---
+\pagenumbering{gobble}    % Apaga la numeración
+\newgeometry{margin=3cm}  % Márgenes estéticos para portada
+\include{Caratula}        % Archivo externo 'Caratula.tex'
+\restoregeometry          % Vuelve a márgenes APA (2.54cm)
+\clearpage                % Salto de página
 
-% 2. Cuerpo del Trabajo
-\setcounter{page}{1} % Empezamos a contar páginas aquí
+% --- PASO 2: ÍNDICES (Numeración Romana opcional o vacía) ---
+% \pagenumbering{roman}   % Descomentar si la universidad pide romanos aquí
 
+% A) Índice General
+\tableofcontents
+\newpage
+
+% B) Índice de Tablas (Se agrega manualmente al TOC)
+\addcontentsline{toc}{section}{Índice de tablas}
+\listoftables
+
+% C) Índice de Figuras (Se agrega manualmente al TOC)
+\addcontentsline{toc}{section}{Índice de figuras}
+\listoffigures
+\newpage
+
+% --- PASO 3: CUERPO DEL TRABAJO (Numeración Arábiga Oficial) ---
+\pagenumbering{arabic}
+\setcounter{page}{1} % La Introducción será la Página 1
+
+% -------------------------------------------------------------------------
+% EJEMPLO: ESTRUCTURA DE SECCIONES
+% -------------------------------------------------------------------------
 \section{Introducción}
-Este documento está configurado para seguir las normas APA manteniendo la flexibilidad de LaTeX. La fuente es Times New Roman de 12 puntos y el interlineado es doble.
+Aquí comienza el texto principal. Observe que el título está centrado y en negrita (Nivel 1). El texto tiene sangría de 1.27 cm y está a doble espacio.
 
-Para citar tus fuentes de economía, usas el comando estándar. Por ejemplo, \cite{Enders2014} señala que las series de tiempo son fundamentales. También puedes citar al final de la frase \citep{Wooldridge2012}.
+Para citar, LaTeX con `apacite` lo hace fácil:
+\begin{itemize}
+    \item Cita narrativa: \citet{Enders2014} afirma que...
+    \item Cita parentética: Se ha encontrado evidencia \citep{Wooldridge2012}.
+\end{itemize}
 
 \section{Metodología}
-En esta sección presentamos el modelo econométrico. Observa que las ecuaciones se numeran automáticamente:
-
+Presentamos el modelo econométrico. Las ecuaciones se numeran a la derecha:
 \begin{equation}
-    Y_t = \beta_0 + \beta_1 X_{1t} + \beta_2 X_{2t} + \mu_t
+    Y_t = \beta_0 + \beta_1 X_{1t} + \mu_t
 \end{equation}
 
-Donde $Y_t$ representa la variable dependiente en el tiempo $t$.
+% -------------------------------------------------------------------------
+% EJEMPLO: CÓMO INSERTAR UNA TABLA APA
+% -------------------------------------------------------------------------
+\section{Resultados}
 
-\section{Resultados Preliminares}
-Aquí puedes insertar tus tablas o gráficos exportados de R o Stata.
+A continuación, se presenta la Tabla \ref{tab:ejemplo_regresion}. Note que solo se usan líneas horizontales principales.
 
-\section{Conclusiones}
-Tus conclusiones finales sobre la investigación de verano.
+\begin{table}[h] % [h] intenta ponerla 'aquí', [t] arriba, [b] abajo
+    \centering
+    
+    % 1. TÍTULO (Configurado en preámbulo: Negrita arriba, Cursiva abajo)
+    \caption{Resultados del análisis de regresión de la brecha salarial}
+    \label{tab:ejemplo_regresion}
+    
+    % 2. TABLA (Use booktabs: toprule, midrule, bottomrule)
+    \begin{tabular}{lccc}
+        \toprule
+        Variable & Coeficiente & Error Estándar & P-Valor \\
+        \midrule
+        Intercepto       & 15.40 & 2.30 & .001 \\
+        Educación (Años) & 0.85  & 0.12 & .000 \\
+        Género (Dummy)   & -1.20 & 0.45 & .032 \\
+        \bottomrule
+    \end{tabular}
+    
+    % 3. NOTA (Espacio pequeño + Nota explicativa)
+    \vspace{0.1cm}
+    \begin{minipage}{\linewidth}
+        \footnotesize % Fuente ligeramente menor
+        \textit{Nota.} Datos de la ENAHO 2024. * p<.05.
+    \end{minipage}
+\end{table}
 
-% 3. Bibliografía
+% -------------------------------------------------------------------------
+% EJEMPLO: CÓMO INSERTAR UNA FIGURA APA
+% -------------------------------------------------------------------------
+La Figura \ref{fig:ejemplo_grafico} muestra la estructura correcta.
+
+\begin{figure}[H] % [H] obliga a la figura a quedarse EXACTAMENTE aquí
+    \centering % Centra la imagen, no use el entorno 'center'
+    
+    % 1. TÍTULO
+    \caption{Evolución de la victimización por extorsión (2015-2025)}
+    \label{fig:ejemplo_grafico}
+    
+    % 2. IMAGEN
+    % Asegúrese de que su gráfico (R/Stata) ya incluya la leyenda interna.
+    \includegraphics[width=0.6\textwidth]{unmsm insignia.png} % Ejemplo
+    
+    % 3. NOTA
+    \vspace{0.2cm}
+    \begin{minipage}{0.8\textwidth} % Ancho ajustado a la imagen
+        \footnotesize
+        \textit{Nota.} La línea azul representa empresas formales. Fuente: INEI.
+    \end{minipage}
+\end{figure}
+
+% -------------------------------------------------------------------------
+% EJEMPLO: TABLA EN HORIZONTAL (LANDSCAPE)
+% -------------------------------------------------------------------------
 \newpage
-% 3. Bibliografía
-\bibliography{referencias}
+\begin{landscape}
+    \begin{table}[p]
+        \centering
+        \caption{Comparación de múltiples modelos (Formato Horizontal)}
+        \label{tab:tabla_ancha}
+        \begin{tabular}{lccccc}
+            \toprule
+            Variable & Mod 1 & Mod 2 & Mod 3 & Mod 4 & Mod 5 \\
+            \midrule
+            Intercepto & 2.45 & 2.10 & 1.95 & 1.80 & 1.50 \\
+            $R^2$      & 0.45 & 0.52 & 0.58 & 0.60 & 0.65 \\
+            \bottomrule
+        \end{tabular}
+        \vspace{0.1cm}
+        \begin{minipage}{\linewidth}
+            \footnotesize \textit{Nota.} Elaboración propia.
+        \end{minipage}
+    \end{table}
+\end{landscape}
+
+% -------------------------------------------------------------------------
+% BIBLIOGRAFÍA
+% -------------------------------------------------------------------------
+\newpage
+\bibliography{bibliografia} % Nombre del archivo .bib
 
 \end{document}
