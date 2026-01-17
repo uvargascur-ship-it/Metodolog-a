@@ -1,6 +1,9 @@
-% caratula.tex
-\begin{titlepage}
+% Caratula.tex (Sin número de página)
+\begingroup
     \centering
+    \thispagestyle{empty} % <--- ESTO BORRA EL NÚMERO DE ESTA PÁGINA
+    
+    \vspace*{0.5cm}
     
     % --- ENCABEZADO UNMSM ---
     {\bfseries\large UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS\par}
@@ -10,29 +13,29 @@
     \vspace{0.5cm}
     {\scshape\large Escuela Profesional de Economía Internacional\par}
     
-    \vspace{1.5cm}
+    \vspace{1cm}
     
-    % --- LOGO (Opcional) ---
-    % Si no tienes la imagen aún, mantén esta línea comentada con %
+    % --- LOGO ---
     \includegraphics[width=4cm]{unmsm insignia.png} 
     
+    \vspace{1cm}
     
     % --- TÍTULO ---
-    {\bfseries\ Determinantes de la victimización por extorsión en microempresas
-de Huaycán: un estudio de corte transversal con metodología mixta\par}
+    {\bfseries\large Determinantes de la victimización por extorsión en microempresas de Huaycán: un estudio de corte transversal con metodología mixta\par}
 
-    \vspace{3cm}
-    %--profesor---
+    \vspace{0.5cm}
+
+    % --- PROFESOR ---
     {\large \textbf{Profesor:}}\par     
     \vspace{0.3cm}
-    {\Large  Dr. Barrientos Felipa Pedro \par}
+    {\large Dr. Barrientos Felipa Pedro \par}
     
-    \vspace{0.3cm}
+    \vspace{1cm}
 
     % --- AUTOR ---
     {\large \textbf{Presentado por:}}\par
     \vspace{0.3cm}
-    {\Large Vargas Curisinche ULises Moisés \par}
+    {\large Vargas Curisinche Ulises Moisés \par}
     
     \vfill
     
@@ -40,4 +43,6 @@ de Huaycán: un estudio de corte transversal con metodología mixta\par}
     {\large Lima, Perú\par}
     {\large 2026}
     
-\end{titlepage}
+    \vspace*{1cm}
+\endgroup
+\newpage % Salto de página obligatorio al final
