@@ -40,7 +40,7 @@
 
 % LADO IZQUIERDO: Título Corto (Running Head)
 % Nota: Debe ser en MAYÚSCULAS y máximo 50 caracteres.
-\fancyhead[L]{DETERMINANTES DE LA VICTIMIZACIÓN EN HUAYCÁN}
+\fancyhead[L]{DETERMINANTES DE LA EXTORSIÓN EN HUAYCÁN
 
 % LADO DERECHO: Número de página
 \fancyhead[R]{\thepage}
@@ -151,7 +151,7 @@
 
 % Configuración de Hipervínculos (Negro para texto, Azul para URL)
 \usepackage{hyperref}
-\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black}
 
 % -------------------------------------------------------------------------
 % 8. BIBLIOGRAFÍA
@@ -194,106 +194,51 @@
 % -------------------------------------------------------------------------
 % EJEMPLO: ESTRUCTURA DE SECCIONES
 % -------------------------------------------------------------------------
-\section{Introducción}
-Aquí comienza el texto principal. Observe que el título está centrado y en negrita (Nivel 1). El texto tiene sangría de 1.27 cm y está a doble espacio.
-
-Para citar, LaTeX con `apacite` lo hace fácil:
-\begin{itemize}
-    \item Cita narrativa: \citet{Enders2014} afirma que...
-    \item Cita parentética: Se ha encontrado evidencia \citep{Wooldridge2012}.
-\end{itemize}
-
-\section{Metodología}
-Presentamos el modelo econométrico. Las ecuaciones se numeran a la derecha:
-\begin{equation}
-    Y_t = \beta_0 + \beta_1 X_{1t} + \mu_t
-\end{equation}
-
 % -------------------------------------------------------------------------
-% EJEMPLO: CÓMO INSERTAR UNA TABLA APA
+% EJEMPLO: ESTRUCTURA DE SECCIONES
 % -------------------------------------------------------------------------
-\section{Resultados}
+\section{JUSTIFICACIÓN}
 
-A continuación, se presenta la Tabla \ref{tab:ejemplo_regresion}. Note que solo se usan líneas horizontales principales.
+La presente investigación pretende llenar un vacío en la literatura sobre la economía del crimen en zonas periurbanas de Lima, donde la informalidad laboral y empresarial genera vulnerabilidades específicas frente a la violencia. Si bien existen estudios sobre victimización por extorsión que identifican factores de cumplimiento como el miedo y la percepción de impunidad \citep{EstevezSoto2021}, pocos analizan cómo la heterogeneidad espacial (altitud y zonificación) y la precariedad institucional interactúan para determinar la probabilidad de extorsión en microempresas. El estudio contrastará la Teoría de las Actividades Rutinarias y la Elección Racional \citep{Schelling1971}, postulando que en Huaycán el crimen no es aleatorio, sino que responde a una lógica de mercado segmentado donde la falta de presencia estatal efectiva en zonas altas (Zona Z) y la aglomeración en zonas comerciales bajas (Zona A) crean incentivos diferenciados para las bandas criminales. Asimismo, se busca validar si la informalidad actúa como barrera de entrada o factor de riesgo ante la \enquote{gobernanza criminal}, concepto apoyado en la evidencia reciente sobre estrategias de pequeños negocios para gestionar extorsión en contextos de violencia \citep{Bull2024, GIATOC2019}.
 
-\begin{table}[h] % [h] intenta ponerla 'aquí', [t] arriba, [b] abajo
-    \centering
-    
-    % 1. TÍTULO (Configurado en preámbulo: Negrita arriba, Cursiva abajo)
-    \caption{Resultados del análisis de regresión de la brecha salarial}
-    \label{tab:ejemplo_regresion}
-    
-    % 2. TABLA (Use booktabs: toprule, midrule, bottomrule)
-    \begin{tabular}{lccc}
-        \toprule
-        Variable & Coeficiente & Error Estándar & P-Valor \\
-        \midrule
-        Intercepto       & 15.40 & 2.30 & .001 \\
-        Educación (Años) & 0.85  & 0.12 & .000 \\
-        Género (Dummy)   & -1.20 & 0.45 & .032 \\
-        \bottomrule
-    \end{tabular}
-    
-    % 3. NOTA (Espacio pequeño + Nota explicativa)
-    \vspace{0.1cm}
-    \begin{minipage}{\linewidth}
-        \footnotesize % Fuente ligeramente menor
-        \textit{Nota.} Datos de la ENAHO 2024. * p<.05.
-    \end{minipage}
-\end{table}
+La relevancia social de este estudio es crítica dado el contexto de inseguridad ciudadana que afecta a Lima Este. Reportes recientes señalan que la extorsión ha crecido un 478\% en los últimos cinco años a nivel nacional, afectando gravemente la continuidad de negocios y del sector transporte \citep{PuntoEdu2025}, con impactos económicos estimados en miles de millones de soles anuales por costos directos e indirectos de la violencia \citep{Jaitman2017}. Esta investigación visibilizará la \enquote{cifra negra} de la extorsión en la Comunidad Urbana Autogestionaria de Huaycán, exponiendo que la baja tasa de denuncias no responde solo al miedo, sino a una ruptura del contrato social y la desconfianza en la Policía Nacional \citep{Mininter2024, BancoMundial2021}. Los resultados permitirán a las juntas vecinales y comunidades empresariales diseñar estrategias de autoprotección más efectivas ante la inacción estatal, considerando los efectos de la extorsión en la entrada y salida emprendedora \citep{Estefan2025}.
 
-% -------------------------------------------------------------------------
-% EJEMPLO: CÓMO INSERTAR UNA FIGURA APA
-% -------------------------------------------------------------------------
-La Figura \ref{fig:ejemplo_grafico} muestra la estructura correcta.
+El aporte principal reside en la construcción de un instrumento ad-hoc que supera las limitaciones de las encuestas nacionales, las cuales no capturan la micro-geografía de los conos de Lima ni los costos diferenciados de la violencia en microempresas informales. Se propone un diseño mixto: cuantitativamente, se aplicará un modelo logístico (Logit) incorporando variables espaciales (altitud) y de aglomeración, alineado con análisis de costos del crimen en la región \citep{Jaitman2017}; cualitativamente, se documentarán los mecanismos informales de resolución de conflictos ante la fallida respuesta policial, inspirado en estrategias de adaptación empresarial frente a extorsión \citep{Bull2024}. Este enfoque dual permitirá medir no solo la probabilidad de ser víctima, sino también entender la \enquote{economía del silencio} que impera en la zona, contribuyendo a la evidencia sobre impactos laborales y empresariales de la inseguridad \citep{BancoMundial2021}.
 
-\begin{figure}[H] % [H] obliga a la figura a quedarse EXACTAMENTE aquí
-    \centering % Centra la imagen, no use el entorno 'center'
-    
-    % 1. TÍTULO
-    \caption{Evolución de la victimización por extorsión (2015-2025)}
-    \label{fig:ejemplo_grafico}
-    
-    % 2. IMAGEN
-    % Asegúrese de que su gráfico (R/Stata) ya incluya la leyenda interna.
-    \includegraphics[width=0.6\textwidth]{unmsm insignia.png} % Ejemplo
-    
-    % 3. NOTA
-    \vspace{0.2cm}
-    \begin{minipage}{0.8\textwidth} % Ancho ajustado a la imagen
-        \footnotesize
-        \textit{Nota.} La línea azul representa empresas formales. Fuente: INEI.
-    \end{minipage}
-\end{figure}
 
-% -------------------------------------------------------------------------
-% EJEMPLO: TABLA EN HORIZONTAL (LANDSCAPE)
-% -------------------------------------------------------------------------
-\newpage
-\begin{landscape}
-    \begin{table}[p]
-        \centering
-        \caption{Comparación de múltiples modelos (Formato Horizontal)}
-        \label{tab:tabla_ancha}
-        \begin{tabular}{lccccc}
-            \toprule
-            Variable & Mod 1 & Mod 2 & Mod 3 & Mod 4 & Mod 5 \\
-            \midrule
-            Intercepto & 2.45 & 2.10 & 1.95 & 1.80 & 1.50 \\
-            $R^2$      & 0.45 & 0.52 & 0.58 & 0.60 & 0.65 \\
-            \bottomrule
-        \end{tabular}
-        \vspace{0.1cm}
-        \begin{minipage}{\linewidth}
-            \footnotesize \textit{Nota.} Elaboración propia.
-        \end{minipage}
-    \end{table}
-\end{landscape}
+% ==========================================
+% FORMULACIÓN DEL PROBLEMA
+% ==========================================
+\section{FORMULACIÓN DEL PROBLEMA}
 
+\subsection{Problema Principal}
+¿De qué manera los determinantes espaciales e institucionales influyen en la probabilidad de victimización por extorsión en las microempresas de la Comunidad Urbana Autogestionaria de Huaycán, durante el año 2025?
+
+\subsection{Problemas Específicos}
+\begin{enumerate}
+    \item ¿Existe una relación significativa entre la ubicación geográfica altitudinal (zonas bajas vs. zonas altas) y la incidencia de extorsión en los negocios locales?
+    \item ¿Cómo influye la percepción de ineficacia policial y las barreras institucionales de denuncia en la vulnerabilidad de los microempresarios frente al cobro de cupos?
+    \item ¿En qué medida la aglomeración comercial (ubicación en mercados o galerías frente a ubicación aislada) actúa como factor diferenciador en los mecanismos de cobro extorsivo?
+\end{enumerate}
+
+% ==========================================
+% OBJETIVOS DE LA INVESTIGACIÓN
+% ==========================================
+\section{OBJETIVOS DE LA INVESTIGACIÓN}
+
+\subsection{Objetivo Principal}
+Determinar la influencia de los factores espaciales e institucionales en la probabilidad de victimización por extorsión en las microempresas de la Comunidad Urbana Autogestionaria de Huaycán, 2025.
+
+\subsection{Objetivos Específicos}
+\begin{enumerate}
+    \item Evaluar si la ubicación altitudinal (diferenciación entre zonas bajas y zonas altas) incrementa la probabilidad de ser víctima de extorsión.
+    \item Analizar el efecto de la desconfianza institucional y la percepción de corrupción policial en la tasa de victimización efectiva de los microempresarios.
+    \item Establecer la relación entre el tipo de aglomeración comercial (mercados vs. puerta a calle) y la modalidad de cobro de cupos.
+\end{enumerate}
 % -------------------------------------------------------------------------
 % BIBLIOGRAFÍA
 % -------------------------------------------------------------------------
 \newpage
-\bibliography{bibliografia} % Nombre del archivo .bib
+\bibliography{referencias} % Archivo externo 'referencias.bib'
 
 \end{document}
